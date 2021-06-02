@@ -92,7 +92,7 @@ class PasswordResetTest extends TestCase
     public function test_password_can_be_reset_successfully(): void
     {
         $user = User::factory()->create([
-            'password' => $originalPassword = 'password',
+            'password' => Hash::make($originalPassword = 'secret'),
         ]);
 
         $token = Password::broker()->createToken($user);

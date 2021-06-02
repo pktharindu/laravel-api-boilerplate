@@ -3,7 +3,6 @@
 namespace Tests\Feature\Auth;
 
 use App\Models\User;
-use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
 use Illuminate\Validation\Rule;
 use Tests\TestCase;
@@ -109,7 +108,7 @@ class RegisterTest extends TestCase
     public function test_user_can_register(): void
     {
         $user = User::factory()->make([
-            'password' => $password = Hash::make('L^Y2%^Xob7JN#75*ki*r98Dnr'),
+            'password' => $password = 'L^Y2%^Xob7JN#75*ki*r98Dnr',
         ]);
 
         $this->postJson('register', [

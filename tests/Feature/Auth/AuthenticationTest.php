@@ -47,12 +47,12 @@ class AuthenticationTest extends TestCase
     public function test_user_can_authenticate(): void
     {
         $user = User::factory()->create([
-            'password' => Hash::make('password'),
+            'password' => Hash::make($password = 'secret'),
         ]);
 
         $this->postJson('login', [
             'email' => $user->email,
-            'password' => 'password',
+            'password' => $password,
         ])->assertOk();
     }
 
