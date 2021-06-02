@@ -4,9 +4,10 @@ namespace Tests\Feature\Auth;
 
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
+use Laravel\Sanctum\Sanctum;
 use Tests\TestCase;
 
-class LoginTest extends TestCase
+class AuthenticationTest extends TestCase
 {
     public function test_email_is_required(): void
     {
@@ -53,5 +54,15 @@ class LoginTest extends TestCase
             'email' => $user->email,
             'password' => 'password',
         ])->assertOk();
+    }
+
+    public function test_the_user_can_logout_of_the_application(): void
+    {
+        Sanctum::actingAs(
+            User::factory()->create()
+        );
+
+        $this->postJson('/logout')
+            ->assertStatus(204);
     }
 }
