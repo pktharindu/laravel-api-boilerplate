@@ -45,7 +45,7 @@ class RegisterTest extends TestCase
             ->assertJsonValidationErrors(['email' => 'string']);
     }
 
-    public function test_email_is_an_email(): void
+    public function test_email_must_be_valid(): void
     {
         $this->postJson('register', [
             'email' => 'not an email',
