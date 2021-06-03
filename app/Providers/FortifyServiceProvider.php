@@ -6,6 +6,7 @@ use App\Actions\Fortify\CreateNewUser;
 use App\Actions\Fortify\ResetUserPassword;
 use App\Actions\Fortify\UpdateUserPassword;
 use App\Actions\Fortify\UpdateUserProfileInformation;
+use App\Models\User;
 use Illuminate\Auth\Notifications\ResetPassword;
 use Illuminate\Cache\RateLimiting\Limit;
 use Illuminate\Http\Request;
@@ -46,7 +47,9 @@ class FortifyServiceProvider extends ServiceProvider
         });
 
         ResetPassword::createUrlUsing(
-            fn ($user, string $token) => config('app.url').'/reset-password?email='.urlencode($user->email).'&token='.$token
+            function (User $user, string $token) {
+                return config('app.url').'/reset-password?email='.urlencode($user->email).'&token='.$token;
+            }
         );
     }
 }
