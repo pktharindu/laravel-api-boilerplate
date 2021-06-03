@@ -96,7 +96,7 @@ class PasswordResetTest extends TestCase
         ]);
 
         $token = Password::broker()->createToken($user);
-        $password = 'aVmjP9TzLx&ymf6e6rfHDo^A6';
+        $password = Str::random(15);
 
         $this->postJson('reset-password', [
             'token' => $token,

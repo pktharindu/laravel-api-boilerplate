@@ -3,6 +3,8 @@
 namespace Tests\Feature\Auth;
 
 use App\Models\User;
+use Illuminate\Auth\Events\Registered;
+use Illuminate\Support\Facades\Event;
 use Illuminate\Support\Str;
 use Illuminate\Validation\Rule;
 use Tests\TestCase;
@@ -93,7 +95,7 @@ class RegisterTest extends TestCase
     public function test_password_is_confirmed(): void
     {
         $this->postJson('register', [
-            'password' => 'L^Y2%^Xob7JN#75*ki*r98Dnr',
+            'password' => Str::random(15),
         ])
             ->assertJsonValidationErrors('password');
     }
@@ -107,8 +109,10 @@ class RegisterTest extends TestCase
 
     public function test_user_can_register(): void
     {
+        Event::fake();
+
         $user = User::factory()->make([
-            'password' => $password = 'L^Y2%^Xob7JN#75*ki*r98Dnr',
+            'password' => $password = Str::random(15),
         ]);
 
         $this->postJson('register', [
@@ -117,5 +121,7 @@ class RegisterTest extends TestCase
             'password' => $password,
             'password_confirmation' => $password,
         ])->assertCreated();
+
+        Event::assertDispatched(Registered::class);
     }
 }
