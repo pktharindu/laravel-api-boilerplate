@@ -19,10 +19,16 @@ jobs:
       uses: shivammathur/setup-php@v2
       with:
         php-version: ${{ matrix.php }}
+    - name: Cache Composer dependencies
+      uses: actions/cache@v2
+      with:
+        path: ~/.composer/cache/files
+        key: php-{{ matrix.php }}-laravel-8.*-composer-${{ hashFiles('**/composer.lock') }}
+        restore-keys: php-{{ matrix.php }}-laravel-8.*-composer-
     - name: Copy ENV Laravel Configuration for CI
       run: php -r "file_exists('.env') || copy('.env.example', '.env');"
     - name: Install Dependencies (PHP vendors)
-      run: composer install --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
+      run: composer install --prefer-dist --no-interaction --no-progress --no-suggest
     - name: Generate key
       run: php artisan key:generate
     - name: Execute tests (Unit and Feature tests)
