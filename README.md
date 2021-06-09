@@ -15,8 +15,10 @@ API boilerplate built with Laravel Sanctum and Laravel Fortify.
 
 - Authentication with Laravel Sanctum and Laravel Fortify.
 - Auto-fix coding style issues with Composer Git hooks and PHP CS Fixer.
+- Setup script (`./bin/setup.sh`).
 - IDE helper.
 - Debug helper.
+- Automated test with GitHub Actions.
 
 ## Support
 
