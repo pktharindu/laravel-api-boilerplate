@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ade6b6acd1dba74654bf409401458181",
+    "content-hash": "7369836c24e37ce36993e8b1eb218a8f",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -7064,6 +7064,55 @@
             "time": "2020-07-09T08:09:16+00:00"
         },
         {
+            "name": "jasonmccreary/laravel-test-assertions",
+            "version": "v1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jasonmccreary/laravel-test-assertions.git",
+                "reference": "163c9df0a68a6fb7c39827292a315408bcea27cc"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jasonmccreary/laravel-test-assertions/zipball/163c9df0a68a6fb7c39827292a315408bcea27cc",
+                "reference": "163c9df0a68a6fb7c39827292a315408bcea27cc",
+                "shasum": ""
+            },
+            "require": {
+                "mockery/mockery": "^1.0",
+                "php": ">=7.2",
+                "phpunit/phpunit": "^7.5|^8.0|^9.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "JMac\\Testing\\AdditionalAssertionsServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "JMac\\Testing\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jason McCreary",
+                    "email": "jason@pureconcepts.net"
+                }
+            ],
+            "description": "A set of helpful assertions when testing Laravel applications.",
+            "support": {
+                "issues": "https://github.com/jasonmccreary/laravel-test-assertions/issues",
+                "source": "https://github.com/jasonmccreary/laravel-test-assertions/tree/v1.1.0"
+            },
+            "time": "2021-02-20T13:23:21+00:00"
+        },
+        {
             "name": "justinrainbow/json-schema",
             "version": "5.2.10",
             "source": {
@@ -7132,6 +7181,104 @@
                 "source": "https://github.com/justinrainbow/json-schema/tree/5.2.10"
             },
             "time": "2020-05-27T16:41:55+00:00"
+        },
+        {
+            "name": "laravel-shift/blueprint",
+            "version": "v1.24.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laravel-shift/blueprint.git",
+                "reference": "759eac3cbee489ced687feac321c9c5d845c634f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laravel-shift/blueprint/zipball/759eac3cbee489ced687feac321c9c5d845c634f",
+                "reference": "759eac3cbee489ced687feac321c9c5d845c634f",
+                "shasum": ""
+            },
+            "require": {
+                "doctrine/dbal": "^2.9|^3.0",
+                "illuminate/console": "^6.0|^7.0|^8.0",
+                "illuminate/filesystem": "^6.0|^7.0|^8.0",
+                "illuminate/support": "^6.0|^7.0|^8.0",
+                "laravel-shift/faker-registry": "^0.1",
+                "symfony/yaml": "^4.3|^5.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "^1.3",
+                "orchestra/testbench": "^4.0|^5.0|^6.0",
+                "phpunit/phpunit": "^8.0|^9.3"
+            },
+            "suggest": {
+                "jasonmccreary/laravel-test-assertions": "Required to use additional assertions in generated tests (^1.0)."
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Blueprint\\BlueprintServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Blueprint\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "An expressive, human readable code generation tool.",
+            "keywords": [
+                "framework",
+                "laravel"
+            ],
+            "support": {
+                "issues": "https://github.com/laravel-shift/blueprint/issues",
+                "source": "https://github.com/laravel-shift/blueprint/tree/v1.24.1"
+            },
+            "time": "2021-04-28T13:34:10+00:00"
+        },
+        {
+            "name": "laravel-shift/faker-registry",
+            "version": "v0.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laravel-shift/faker-registry.git",
+                "reference": "051c1d50f428b699ee9456072f9c54cb073a006f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laravel-shift/faker-registry/zipball/051c1d50f428b699ee9456072f9c54cb073a006f",
+                "reference": "051c1d50f428b699ee9456072f9c54cb073a006f",
+                "shasum": ""
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^8.0|^9.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Shift\\Faker\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jason McCreary",
+                    "email": "jason@pureconcepts.net"
+                }
+            ],
+            "description": "A registry for generating Faker data from a name or data type.",
+            "support": {
+                "issues": "https://github.com/laravel-shift/faker-registry/issues",
+                "source": "https://github.com/laravel-shift/faker-registry/tree/v0.1"
+            },
+            "time": "2020-07-23T16:20:46+00:00"
         },
         {
             "name": "laravel/sail",
@@ -9782,6 +9929,81 @@
             "time": "2021-05-26T17:43:10+00:00"
         },
         {
+            "name": "symfony/yaml",
+            "version": "v5.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/yaml.git",
+                "reference": "3bbcf262fceb3d8f48175302e6ba0ac96e3a5a11"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/yaml/zipball/3bbcf262fceb3d8f48175302e6ba0ac96e3a5a11",
+                "reference": "3bbcf262fceb3d8f48175302e6ba0ac96e3a5a11",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.2.5",
+                "symfony/deprecation-contracts": "^2.1",
+                "symfony/polyfill-ctype": "~1.8"
+            },
+            "conflict": {
+                "symfony/console": "<4.4"
+            },
+            "require-dev": {
+                "symfony/console": "^4.4|^5.0"
+            },
+            "suggest": {
+                "symfony/console": "For validating YAML files using the lint command"
+            },
+            "bin": [
+                "Resources/bin/yaml-lint"
+            ],
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Component\\Yaml\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Loads and dumps YAML files",
+            "homepage": "https://symfony.com",
+            "support": {
+                "source": "https://github.com/symfony/yaml/tree/v5.3.0"
+            },
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2021-05-26T17:43:10+00:00"
+        },
+        {
             "name": "theseer/tokenizer",
             "version": "1.2.0",
             "source": {
@@ -9907,7 +10129,7 @@
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
-        "php": "^7.3|^8.0"
+        "php": "^8.0"
     },
     "platform-dev": [],
     "platform-overrides": {
