@@ -29,4 +29,4 @@ If you require any support please contact me on [Twitter](https://twitter.com/Ca
 
 Copyright © 2021 P. K. Tharindu.
 
-Licensed under the MIT license, see [LICENSE](LICENSE.md) for details..
+Licensed under the MIT license, see [LICENSE](LICENSE.md) for details.
